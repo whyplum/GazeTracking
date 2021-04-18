@@ -111,6 +111,36 @@ class GazeTracking(object):
         if self.pupils_located:
             return self.is_right() is not True and self.is_left() is not True
 
+    def is_up(self):
+        """Returns true if the user is looking up"""
+        if self.pupils_located:
+            return self.is_center() and self.vertical_ratio() <= 0.35
+
+    def is_down(self):
+        """Returns true if the user is looking down"""
+        if self.pupils_located:
+            return self.is_center() and self.vertical_ratio() >= 0.65
+
+    def is_top_right():
+        """Returns true if the user is looking at the top right screen corner"""
+        if self.pupils_located:
+            return self.is_up() and self.is_right()
+
+    def is_top_left():
+        """Returns true if the user is looking at the top right screen corner"""
+        if self.pupils_located:
+            return self.is_up() and self.is_left()
+
+    def is_down_right():
+        """Returns true if the user is looking at the top right screen corner"""
+        if self.pupils_located:
+            return self.is_down() and self.is_right()
+
+    def is_down_left():
+        """Returns true if the user is looking at the top right screen corner"""
+        if self.pupils_located:
+            return self.is_down() and self.is_left()
+
     def is_blinking(self):
         """Returns true if the user closes his eyes"""
         if self.pupils_located:
