@@ -121,22 +121,22 @@ class GazeTracking(object):
         if self.pupils_located:
             return self.is_center() and self.vertical_ratio() >= 0.65
 
-    def is_top_right():
+    def is_top_right(self):
         """Returns true if the user is looking at the top right screen corner"""
         if self.pupils_located:
             return self.is_up() and self.is_right()
 
-    def is_top_left():
+    def is_top_left(self):
         """Returns true if the user is looking at the top right screen corner"""
         if self.pupils_located:
             return self.is_up() and self.is_left()
 
-    def is_down_right():
+    def is_down_right(self):
         """Returns true if the user is looking at the top right screen corner"""
         if self.pupils_located:
             return self.is_down() and self.is_right()
 
-    def is_down_left():
+    def is_down_left(self):
         """Returns true if the user is looking at the top right screen corner"""
         if self.pupils_located:
             return self.is_down() and self.is_left()
